@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoMap - ニュース情報空間マップ</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>InfoMap</h1>
+            <p class="subtitle">ニュース情報空間の可視化</p>
+        </header>
+
+        <main>
+            <div class="map-container">
+                <div class="controls">
+                    <div class="legend" id="legend"></div>
+                    <div class="diversity-score">
+                        <span class="label">多様性スコア</span>
+                        <span class="score" id="diversity-score">--</span>
+                    </div>
+                </div>
+                <svg id="map"></svg>
+            </div>
+
+            <aside class="sidebar">
+                <div class="current-article" id="current-article">
+                    <h3>現在の記事</h3>
+                    <p class="placeholder">記事をクリックして選択</p>
+                </div>
+
+                <div class="recommendations" id="recommendations">
+                    <h3>おすすめ記事</h3>
+                    <p class="description">異なる視点・トピックの記事</p>
+                    <ul id="recommendation-list"></ul>
+                </div>
+
+                <div class="reading-history">
+                    <h3>閲覧履歴</h3>
+                    <ul id="history-list"></ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
